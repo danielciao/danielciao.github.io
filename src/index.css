@@ -1,0 +1,49 @@
+:root {
+	color-scheme: light dark;
+	font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100dvh;
+	display: grid;
+	place-items: center;
+	padding: 2rem;
+}
+
+.shell {
+	max-width: 32rem;
+	text-align: center;
+}
+
+h1 {
+	margin: 0 0 0.5rem;
+	font-size: clamp(1.75rem, 5vw, 2.5rem);
+	letter-spacing: -0.02em;
+}
+
+button {
+	font: inherit;
+	padding: 0.6rem 1.25rem;
+	border-radius: 0.5rem;
+	border: 1px solid currentcolor;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+	transition: opacity 150ms ease;
+}
+
+button:hover {
+	opacity: 0.7;
+}
+
+button:focus-visible {
+	outline: 2px solid currentcolor;
+	outline-offset: 3px;
+}
