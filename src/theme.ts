@@ -1,9 +1,9 @@
 import { createTheme } from "@mantine/core";
 
-const geist = '"Geist Variable", sans-serif';
+const robotoFlex = '"Roboto Flex Variable", sans-serif';
 
 export const theme = createTheme({
-	fontFamily: geist,
-	headings: { fontFamily: geist },
+	fontFamily: robotoFlex,
+	headings: { fontFamily: robotoFlex },
 	defaultRadius: "md",
 });
