@@ -1,3 +1,12 @@
+import {
+	ActionIcon,
+	Button,
+	Container,
+	Group,
+	Stack,
+	Title,
+} from "@mantine/core";
+import { RotateCcw } from "lucide-react";
 import { useCallback, useState } from "react";
 
 export default function App() {
@@ -7,13 +16,27 @@ export default function App() {
 		setCount((current) => current + 1);
 	}, []);
 
-	return (
-		<main className="shell">
-			<h1>Hello World</h1>
+	const reset = useCallback(() => {
+		setCount(0);
+	}, []);
 
-			<button type="button" onClick={increment}>
-				clicked {count} {count === 1 ? "time" : "times"}
-			</button>
-		</main>
+	return (
+		<Container size="sm" py={64}>
+			<Stack gap="lg" align="flex-start">
+				<Title order={1}>Hello World</Title>
+
+				<Group>
+					<Button onClick={increment}>clicked {count} times</Button>
+					<ActionIcon
+						variant="default"
+						size="lg"
+						aria-label="Reset counter"
+						onClick={reset}
+					>
+						<RotateCcw size={18} />
+					</ActionIcon>
+				</Group>
+			</Stack>
+		</Container>
 	);
 }

@@ -1,16 +1,19 @@
+import { MantineProvider } from "@mantine/core";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { theme } from "./theme.ts";
 
 const rootElement = document.getElementById("root");
-
 if (!rootElement) {
 	throw new Error("Root element #root not found in index.html");
 }
 
 createRoot(rootElement).render(
 	<StrictMode>
-		<App />
+		<MantineProvider theme={theme} defaultColorScheme="auto">
+			<App />
+		</MantineProvider>
 	</StrictMode>,
 );
